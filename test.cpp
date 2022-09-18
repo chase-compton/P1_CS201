@@ -27,7 +27,7 @@ int main(){
 	// A => "10 0 1 2 3 4 5 6 7 8 9 15 19"
 	cout << "Select is " << A.linearSearch(5) << endl;
 	// A => "10 0 1 2 3 4 5 6 7 8 9 15 19" Search => 6
-	A.stableSort();
+	//A.stableSort();
     cout<<"A:"<<endl;
     for (int i=0; i< A.length();i++) cout << A[i] << " ";  cout << endl;
 	// A => "0 1 2 3 4 5 6 7 8 9 10 15 19"

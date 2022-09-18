@@ -76,21 +76,20 @@ public:
         {
             type *newArray;
             cap = cap * 2;
-            front = (front - 1 + cap) % cap;
-            array[front] = value;
-            size++;
             newArray = new type[cap];
+            newArray[0] = value;
             for (int i = 0; i < size; i++)
             {
-                newArray[i] = *(array + ((front + i) % cap));
+                newArray[i + 1] = *(array + ((front + i) % cap));
             }
-            for (int j = size; j < cap; j++)
+            for (int j = size + 1; j < cap; j++)
             {
                 newArray[j] = 0;
             }
             delete[] array;
             array = newArray;
             front = 0;
+            size++;
         }
         else
         {
