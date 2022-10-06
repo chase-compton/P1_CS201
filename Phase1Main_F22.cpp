@@ -77,8 +77,8 @@ void test1(ostream &fp){
 	fp << "Capacity is " << A.capacity() << endl;
 	fp << "Search is " << A.linearSearch(60) << endl;
 	fp << "Select is " << A.QuickSelect(2) << endl;
-	A.addFront(12); 
 	A.stableSort();
+	A.addFront(12); 
 	fp << "Search is " << A.binSearch(60) << endl;
 	for (int i=0; i< A.length();i++) fp << A[i] << " ";  fp << endl;
 	fp << "Select is " << A.WCSelect(2) << endl;

@@ -191,17 +191,22 @@ public:
 
     type QSkthSmallest(int l, int r, int k)
     {
+        cout<<"1"<<endl;
         if (k > 0 && k <= r - l + 1)
         {
+            cout<<"2"<<endl;
             int index = QSpartition(l, r);
             if (index - l == k - 1)
             {
+                cout<<"3"<<endl;
                 return *(array + ((front + index) % cap));
             }
             if (index - l > k - 1)
             {
+                cout<<"4"<<endl;
                 return QSkthSmallest(l, index - 1, k);
             }
+            cout<<"5"<<endl;
             return QSkthSmallest(index + 1, r, k - index + l - 1);
         }
 
@@ -210,16 +215,19 @@ public:
 
     type QSpartition(int l, int r)
     {
+        cout<<"6"<<endl;
         type x = *(array + ((front + r) % cap));
         int i = l;
         for (int j = l; j <= r - 1; j++)
         {
+            cout<<j<<"|"<<l<<"|"<<r - 1<<endl;
             if (*(array + ((front + j) % cap)) <= x)
             {
                 swap(*(array + ((front + i) % cap)), *(array + ((front + j) % cap)));
                 i++;
             }
         }
+        cout<<"9"<<endl;
         swap(*(array + ((front + i) % cap)), *(array + ((front + r) % cap)));
         return i;
     }
@@ -384,18 +392,14 @@ public:
         int left =  0;
         int right = size - 1;
         int mid;
-        cout<<left<<"|"<<right<<endl;
-
         while (left <= right)
         {
-            mid = ((front + (left + (right - left) / 2)) % cap);
-            cout<<left<<"|"<<mid<<"|"<<right<<"|"<<front<<"|"<<cap<<endl;
-            if (array[mid] == e)
+            mid = (left + (right - left) / 2);
+            if ( *(array + ((front + mid) % cap)) == e)
             {
-                cout<< *(array + mid) <<endl;
                 return mid;
             }
-            else if (array[mid] > e)
+            else if ( *(array + ((front + mid) % cap)) > e)
             {
                 right = mid - 1;
             }
