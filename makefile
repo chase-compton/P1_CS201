@@ -1,2 +1,2 @@
 all: 
-	g++ Phase1Main.cpp CircularDynamicArray.cpp -o Phase1
+	g++ Phase1Main_F22.cpp CircularDynamicArray.cpp -o Phase1
