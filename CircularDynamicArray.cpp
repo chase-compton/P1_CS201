@@ -381,15 +381,18 @@ public:
 
     int binSearch(type e)
     {
-        int left = front;
-        int right = (front + size - 1) % cap;
+        int left =  0;
+        int right = size - 1;
         int mid;
+        cout<<left<<"|"<<right<<endl;
 
         while (left <= right)
         {
-            mid = left + (right - left) / 2;
+            mid = ((front + (left + (right - left) / 2)) % cap);
+            cout<<left<<"|"<<mid<<"|"<<right<<"|"<<front<<"|"<<cap<<endl;
             if (array[mid] == e)
             {
+                cout<< *(array + mid) <<endl;
                 return mid;
             }
             else if (array[mid] > e)
